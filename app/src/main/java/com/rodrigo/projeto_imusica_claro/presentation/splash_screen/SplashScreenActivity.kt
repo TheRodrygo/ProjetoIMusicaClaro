@@ -1,5 +1,6 @@
-package com.rodrigo.projeto_imusica_claro.presentation.ui.splash_screen
+package com.rodrigo.projeto_imusica_claro.presentation.splash_screen
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -15,10 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.rodrigo.projeto_imusica_claro.R
-import com.rodrigo.projeto_imusica_claro.presentation.ui.splash_screen.components.RotatingImage
+import com.rodrigo.projeto_imusica_claro.presentation.home.HomeActivity
+import com.rodrigo.projeto_imusica_claro.presentation.splash_screen.components.RotatingImage
 
-class SplashScreen : AppCompatActivity() {
-    private val splashTimeout = 3000L
+class SplashScreenActivity : AppCompatActivity() {
+    private val splashTimeout = 5000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -28,7 +30,8 @@ class SplashScreen : AppCompatActivity() {
             MySplashScreen()
         }
         Handler(Looper.getMainLooper()).postDelayed({
-            //Adicionar a ação que vai ser feita após o tempo definido.
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }, splashTimeout)
     }
 }
