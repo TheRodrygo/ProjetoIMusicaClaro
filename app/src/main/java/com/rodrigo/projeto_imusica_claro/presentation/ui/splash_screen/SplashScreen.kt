@@ -1,43 +1,49 @@
 package com.rodrigo.projeto_imusica_claro.presentation.ui.splash_screen
 
-import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.rodrigo.projeto_imusica_claro.presentation.ui.base.theme.ProjetoiMusicaClaroTheme
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.rodrigo.projeto_imusica_claro.R
+import com.rodrigo.projeto_imusica_claro.presentation.ui.splash_screen.components.RotatingImage
 
-class SplashScreen : ComponentActivity() {
+class SplashScreen : AppCompatActivity() {
+    private val splashTimeout = 3000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ProjetoiMusicaClaroTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.statusBarColor = getColor(R.color.red)
         }
+        setContent {
+            MySplashScreen()
+        }
+        Handler(Looper.getMainLooper()).postDelayed({
+            //Adicionar a ação que vai ser feita após o tempo definido.
+        }, splashTimeout)
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ProjetoiMusicaClaroTheme {
-        Greeting("Android")
+fun MySplashScreen() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Red),
+        contentAlignment = Alignment.Center
+    ) {
+        RotatingImage(
+            imageResId = R.drawable.splash_screen,
+            imageSize = 200.dp
+        )
     }
 }
