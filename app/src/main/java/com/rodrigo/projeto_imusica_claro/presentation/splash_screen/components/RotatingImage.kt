@@ -1,4 +1,4 @@
-package com.rodrigo.projeto_imusica_claro.presentation.ui.splash_screen.components
+package com.rodrigo.projeto_imusica_claro.presentation.splash_screen.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
