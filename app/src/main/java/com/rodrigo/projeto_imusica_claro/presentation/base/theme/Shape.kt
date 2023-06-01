@@ -1,4 +1,4 @@
-package com.rodrigo.projeto_imusica_claro.presentation.ui.base.theme
+package com.rodrigo.projeto_imusica_claro.presentation.base.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
