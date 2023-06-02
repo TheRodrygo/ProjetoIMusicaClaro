@@ -2,15 +2,15 @@ package com.rodrigo.projeto_imusica_claro.presentation.home
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.rodrigo.projeto_imusica_claro.presentation.base.theme.ProjetoiMusicaClaroTheme
+import com.rodrigo.projeto_imusica_claro.presentation.base.utils.BaseActivity
 import com.rodrigo.projeto_imusica_claro.presentation.home.navigation.HomeScreen
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     @OptIn(ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +23,12 @@ class HomeActivity : AppCompatActivity() {
                     startDestination = HomeScreen.HomeList.route,
                     builder = {
                         homeList(
+                            navHostController = navController
+                        )
+                        homeConfiguration(
                             navHostController = navController,
-                            onBackPressedDispatcher = onBackPressedDispatcher
+                            onBackPressedDispatcher = onBackPressedDispatcher,
+                            activity = this@HomeActivity
                         )
                     }
                 )

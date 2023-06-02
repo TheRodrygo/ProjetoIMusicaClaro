@@ -1,5 +1,6 @@
 <resources>
     <string name="home_screen_title">IMusica/Claro Project</string>
+    <string name="home_configuration_title">Preferences</string>
     <string name="home_list_empty_error">There is no list.</string>
     <string name="home_list_loading_error">There was an error loading your list.</string>
     <string name="home_list_try_again">Try again</string>
@@ -8,4 +9,9 @@
     <string name="home_list_ups">Ups: </string>
     <string name="home_list_comments">Comments: </string>
     <string name="home_list_created">Created: </string>
+
+    <string-array name="language_names">
+        <item>Portuguese</item>
+        <item>English</item>
+    </string-array>
 </resources>

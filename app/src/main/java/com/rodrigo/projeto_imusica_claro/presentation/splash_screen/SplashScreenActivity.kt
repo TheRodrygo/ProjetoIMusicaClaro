@@ -16,10 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.rodrigo.projeto_imusica_claro.R
+import com.rodrigo.projeto_imusica_claro.presentation.base.utils.BaseActivity
 import com.rodrigo.projeto_imusica_claro.presentation.home.HomeActivity
 import com.rodrigo.projeto_imusica_claro.presentation.splash_screen.components.RotatingImage
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : BaseActivity() {
     private val splashTimeout = 5000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

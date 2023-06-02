@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Theme.ProjetoiMusicaClaro" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@color/secondary</item>
         <item name="colorPrimary">@color/primary</item>
@@ -17,4 +18,13 @@
         <item name="colorOnBackground">@color/on_background</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
+
+    <style name="Theme.ProjetoiMusicaClaro.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ProjetoiMusicaClaro.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ProjetoiMusicaClaro.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

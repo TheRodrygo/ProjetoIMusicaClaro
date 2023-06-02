@@ -15,12 +15,12 @@ import com.rodrigo.projeto_imusica_claro.R
 import com.rodrigo.projeto_imusica_claro.presentation.base.components.swipe_refresh.CustomSwipeRefresh
 import com.rodrigo.projeto_imusica_claro.presentation.base.components.topbar.TopBar
 import com.rodrigo.projeto_imusica_claro.presentation.base.theme.ProjetoiMusicaClaroTheme
+import com.rodrigo.projeto_imusica_claro.presentation.home.navigation.HomeScreen.HomeConfiguration
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.home.components.HomeListItem
 
 @Composable
 fun HomeListScreen(
     navHostController: NavHostController,
-    backPressedDispatcher: OnBackPressedDispatcher,
     viewModel: HomeListViewModel,
 ) {
     val redditListUI = viewModel.getRedditInformation.collectAsState().value
@@ -30,7 +30,12 @@ fun HomeListScreen(
             topBar = {
                 TopBar(
                     title = stringResource(id = R.string.home_screen_title),
-                    hasNavigationIcon = false
+                    hasNavigationIcon = false,
+                    onConfigurationClicked = {
+                        HomeConfiguration.navigate(
+                            navHostController = navHostController,
+                        )
+                    }
                 )
             }
         ) { paddingValues ->
