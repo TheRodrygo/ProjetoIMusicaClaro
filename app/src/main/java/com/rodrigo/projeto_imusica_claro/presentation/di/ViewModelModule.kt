@@ -7,6 +7,8 @@ import org.koin.dsl.module
 val viewModelModules = module {
 
     viewModel {
-        HomeListViewModel()
+        HomeListViewModel(
+            getRedditInformationUseCase = get()
+        )
     }
 }
