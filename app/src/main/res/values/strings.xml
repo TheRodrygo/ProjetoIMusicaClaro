@@ -10,6 +10,9 @@
     <string name="home_list_ups">Ups: </string>
     <string name="home_list_comments">Comentários: </string>
     <string name="home_list_created">Criado em: </string>
+    <string name="notification_title">Projeto IMusica/Claro notificação</string>
+    <string name="notification_description">Você está ausente faz 20 segundos.</string>
+    <string name="notification_content">Clique aqui para recarregar a listagem de posts</string>
 
     <string-array name="language_names">
         <item>Português</item>

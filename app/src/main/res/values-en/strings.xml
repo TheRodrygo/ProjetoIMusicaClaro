@@ -9,6 +9,9 @@
     <string name="home_list_ups">Ups: </string>
     <string name="home_list_comments">Comments: </string>
     <string name="home_list_created">Created: </string>
+    <string name="notification_title">IMusica/Claro notification project</string>
+    <string name="notification_description">You ve been away for 20 seconds.</string>
+    <string name="notification_content">Click here to reload the post listing</string>
 
     <string-array name="language_names">
         <item>Portuguese</item>
