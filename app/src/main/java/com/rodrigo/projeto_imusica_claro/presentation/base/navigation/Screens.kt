@@ -1,4 +1,4 @@
-package br.com.inchurch.presentation.base.compose.navigation
+package com.rodrigo.projeto_imusica_claro.presentation.base.navigation
 
 import androidx.navigation.NavHostController
 

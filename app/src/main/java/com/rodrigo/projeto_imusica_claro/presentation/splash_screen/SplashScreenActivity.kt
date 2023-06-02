@@ -23,9 +23,6 @@ class SplashScreenActivity : AppCompatActivity() {
     private val splashTimeout = 5000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.statusBarColor = getColor(R.color.red)
-        }
         setContent {
             MySplashScreen()
         }

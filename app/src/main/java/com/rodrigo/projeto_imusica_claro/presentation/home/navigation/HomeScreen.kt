@@ -1,6 +1,6 @@
 package com.rodrigo.projeto_imusica_claro.presentation.home.navigation
 
-import br.com.inchurch.presentation.base.compose.navigation.Screens
+import com.rodrigo.projeto_imusica_claro.presentation.base.navigation.Screens
 
 sealed class HomeScreen(route: String, argumentKey: String) : Screens(route, argumentKey) {
     object HomeList : HomeScreen(
