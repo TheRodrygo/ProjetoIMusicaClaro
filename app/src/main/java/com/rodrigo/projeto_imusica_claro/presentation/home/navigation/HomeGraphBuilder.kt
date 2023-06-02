@@ -12,6 +12,7 @@ import androidx.navigation.navArgument
 import com.google.accompanist.navigation.animation.composable
 import com.rodrigo.projeto_imusica_claro.presentation.base.theme.exitTransition
 import com.rodrigo.projeto_imusica_claro.presentation.base.theme.popEnterTransition
+import com.rodrigo.projeto_imusica_claro.presentation.base.view_model.InactivityViewModel
 import com.rodrigo.projeto_imusica_claro.presentation.home.navigation.HomeScreen
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.configuration.HomeConfigurationScreen
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.configuration.HomeConfigurationViewModel
@@ -21,7 +22,8 @@ import org.koin.androidx.compose.getViewModel
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.homeList(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    inactivityViewModel: InactivityViewModel
 ) {
     composable(
         route = HomeScreen.HomeList.route,
@@ -48,7 +50,8 @@ fun NavGraphBuilder.homeList(
         val viewModel = getViewModel<HomeListViewModel>()
         HomeListScreen(
             viewModel = viewModel,
-            navHostController = navHostController
+            navHostController = navHostController,
+            inactivityViewModel = inactivityViewModel
         )
     }
 }

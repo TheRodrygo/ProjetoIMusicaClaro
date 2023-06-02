@@ -1,10 +1,14 @@
 package com.rodrigo.projeto_imusica_claro.presentation.home.screen.home
 
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rodrigo.projeto_imusica_claro.domain.model.reddit.Reddit
 import com.rodrigo.projeto_imusica_claro.domain.usecase.reddit.GetRedditInformationUseCase
 import com.rodrigo.projeto_imusica_claro.presentation.base.model.StateUI
+import com.rodrigo.projeto_imusica_claro.presentation.base.utils.NotificationDismissedReceiver
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch

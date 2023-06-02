@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.rodrigo.projeto_imusica_claro.R
 import com.rodrigo.projeto_imusica_claro.domain.model.reddit.PostData
+import com.rodrigo.projeto_imusica_claro.presentation.base.view_model.InactivityViewModel
 
 @Composable
 fun StyledText(text: String, style: TextStyle, modifier: Modifier = Modifier, showDivider: Boolean = true) {
@@ -27,7 +28,9 @@ fun StyledText(text: String, style: TextStyle, modifier: Modifier = Modifier, sh
 }
 
 @Composable
-fun HomeItem(postData: PostData) {
+fun HomeItem(
+    postData: PostData
+) {
     Card(
         modifier = Modifier
             .padding(16.dp)

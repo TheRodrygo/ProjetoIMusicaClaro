@@ -1,6 +1,9 @@
 package com.rodrigo.projeto_imusica_claro.presentation.home.screen.home.components
 
+import android.util.Log
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -16,12 +19,14 @@ import com.rodrigo.projeto_imusica_claro.presentation.base.components.custom_but
 import com.rodrigo.projeto_imusica_claro.presentation.base.model.StateUI
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.home.HomeListViewModel
 import com.rodrigo.projeto_imusica_claro.R
+import com.rodrigo.projeto_imusica_claro.presentation.base.view_model.InactivityViewModel
 
 @Composable
 fun HomeListItem(
     modifier: Modifier = Modifier,
     homeList: StateUI<Reddit> = StateUI.Idle(),
     viewModel: HomeListViewModel,
+    inactivityViewModel: InactivityViewModel
 ) {
     when {
         homeList.processed() -> {
@@ -35,16 +40,34 @@ fun HomeListItem(
                     }
                 )
             else
-                LazyColumn {
-                    itemsIndexed(
-                        processed.data.redditData.redditChildren
-                    ) { index, item ->
-                        if (index == 0)
-                            Spacer(Modifier.padding(bottom = 0.dp))
-                        HomeItem(
-                            postData = item.postData,
-                        )
-                        Spacer(modifier = Modifier.height(8.dp))
+                Box(modifier = Modifier.pointerInput(Unit) {
+                    detectDragGestures { change, dragAmount ->
+                        inactivityViewModel.onUserInteraction()
+                    }
+                }) {
+                    Box(modifier = Modifier.pointerInput(Unit) {
+                        detectTapGestures(onTap = {
+                            inactivityViewModel.onUserInteraction()
+                        },
+                        onPress = {
+                            inactivityViewModel.onUserInteraction()
+                        })
+                        detectDragGestures { change, dragAmount ->
+                            inactivityViewModel.onUserInteraction()
+                        }
+                    }) {
+                        LazyColumn {
+                            itemsIndexed(
+                                processed.data.redditData.redditChildren,
+                            ) { index, item ->
+                                if (index == 0)
+                                    Spacer(Modifier.padding(bottom = 0.dp))
+                                HomeItem(
+                                    postData = item.postData,
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                            }
+                        }
                     }
                 }
         }

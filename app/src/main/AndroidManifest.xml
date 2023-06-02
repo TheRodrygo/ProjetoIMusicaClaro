@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.DISPATCH_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -42,5 +44,13 @@
                 android:name="com.rodrigo.projeto_imusica_claro.domain.initializer.KoinInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <receiver
+            android:name=".presentation.base.utils.NotificationDismissedReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ACTION_NOTIFICATION_DISMISSED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

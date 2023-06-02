@@ -50,6 +50,14 @@ class NotificationManager(private val context: Context) {
         val pendingIntent: PendingIntent =
             PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
+        val deleteIntent: PendingIntent =
+            PendingIntent.getBroadcast(
+                context,
+                0,
+                Intent(context, NotificationDismissedReceiver::class.java),
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+
         val notification = NotificationCompat.Builder(context, channelId)
             .setContentTitle(title)
             .setContentText(content)
@@ -59,6 +67,7 @@ class NotificationManager(private val context: Context) {
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
+            .setDeleteIntent(deleteIntent)
             .build()
 
         val notificationManager = NotificationManagerCompat.from(context)
