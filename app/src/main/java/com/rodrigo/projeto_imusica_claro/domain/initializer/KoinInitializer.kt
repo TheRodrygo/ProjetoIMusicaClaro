@@ -3,6 +3,7 @@ package com.rodrigo.projeto_imusica_claro.domain.initializer
 import android.content.Context
 import androidx.startup.Initializer
 import com.rodrigo.projeto_imusica_claro.data.di.repositoryModules
+import com.rodrigo.projeto_imusica_claro.data.network.di.networkModule
 import com.rodrigo.projeto_imusica_claro.data.network.service.serviceModules
 import com.rodrigo.projeto_imusica_claro.domain.di.useCaseModules
 import com.rodrigo.projeto_imusica_claro.presentation.di.viewModelModules
@@ -17,10 +18,11 @@ class KoinInitializer : Initializer<KoinApplication> {
             androidContext(context)
             androidFileProperties()
             modules(
-                viewModelModules,
+                networkModule,
                 serviceModules,
                 repositoryModules,
-                useCaseModules
+                useCaseModules,
+                viewModelModules
             )
         }
     }
