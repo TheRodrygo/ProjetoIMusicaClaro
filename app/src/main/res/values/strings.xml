@@ -2,8 +2,8 @@
     <string name="app_name" translatable="false">Projeto-iMusica-Claro</string>
     <string name="home_screen_title">Projeto IMusica/Claro</string>
     <string name="home_configuration_title">Preferências</string>
-    <string name="home_list_empty_error">Não há trilhas cadastradas.</string>
-    <string name="home_list_loading_error">Ocorreu um erro ao carregar suas trilhas.</string>
+    <string name="home_list_empty_error">Não há informações.</string>
+    <string name="home_list_loading_error">Ocorreu um erro ao carregar sua listagem.</string>
     <string name="home_list_try_again">Tentar novamente</string>
     <string name="home_list_title">Titulo: </string>
     <string name="home_list_author">Autor: </string>
