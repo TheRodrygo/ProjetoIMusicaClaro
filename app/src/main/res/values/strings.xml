@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Projeto-iMusica-Claro</string>
+    <string name="app_name" translatable="false">Projeto-iMusica-Claro</string>
+    <string name="home_screen_title">Projeto IMusica/Claro</string>
+    <string name="home_list_empty_error">Não há trilhas cadastradas.</string>
+    <string name="home_list_loading_error">Ocorreu um erro ao carregar suas trilhas.</string>
+    <string name="home_list_try_again">Tentar novamente</string>
+    <string name="home_list_title">Titulo: </string>
+    <string name="home_list_author">Autor: </string>
+    <string name="home_list_ups">Ups: </string>
+    <string name="home_list_comments">Comentários: </string>
+    <string name="home_list_created">Criado em: </string>
 </resources>

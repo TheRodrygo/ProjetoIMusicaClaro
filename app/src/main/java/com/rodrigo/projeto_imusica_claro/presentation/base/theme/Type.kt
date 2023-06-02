@@ -52,7 +52,7 @@ val Typography = Typography(
     subtitle2 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
+        fontSize = 12.sp,
         letterSpacing = 0.1.sp
     ),
     body1 = TextStyle(
