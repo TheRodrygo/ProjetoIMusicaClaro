@@ -57,7 +57,7 @@ fun CircleImageWithBorder(
                     Icon(
                         painter = painterResource(id = R.drawable.ic_person),
                         contentDescription = null,
-                        modifier = Modifier.align(Alignment.Center)
+                        modifier = Modifier.align(Alignment.Center).fillMaxSize()
                     )
                 }
             }
