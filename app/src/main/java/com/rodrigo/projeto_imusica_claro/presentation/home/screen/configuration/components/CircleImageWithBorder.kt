@@ -56,7 +56,7 @@ fun CircleImageWithBorder(
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_person),
-                        contentDescription = "Placeholder",
+                        contentDescription = null,
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
@@ -70,7 +70,7 @@ fun CircleImageWithBorder(
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_cam),
-                contentDescription = "Abrir câmera",
+                contentDescription = null,
                 modifier = Modifier
                     .size(28.dp)
                     .clickable(onClick = onCameraClick)

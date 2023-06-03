@@ -118,7 +118,7 @@ fun CameraView(
             content = {
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "Back",
+                    contentDescription = null,
                     tint = MaterialTheme.colors.background
                 )
             }
@@ -146,7 +146,7 @@ fun CameraView(
             content = {
                 Icon(
                     imageVector = Icons.Sharp.Lens,
-                    contentDescription = "Take picture",
+                    contentDescription = null,
                     tint = MaterialTheme.colors.background,
                     modifier = Modifier
                         .size(80.dp)
@@ -171,7 +171,7 @@ fun CameraView(
             content = {
                 Icon(
                     imageVector = Icons.Default.SwitchCamera,
-                    contentDescription = "Switch Camera",
+                    contentDescription = null,
                     tint = MaterialTheme.colors.background
                 )
             }

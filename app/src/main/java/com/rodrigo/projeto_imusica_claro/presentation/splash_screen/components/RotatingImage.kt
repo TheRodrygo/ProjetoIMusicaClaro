@@ -27,7 +27,7 @@ fun RotatingImage(imageResId: Int, imageSize: Dp) {
 
     Image(
         painter = painterResource(id = imageResId),
-        contentDescription = "Animated Image",
+        contentDescription = null,
         modifier = Modifier
             .clip(CircleShape)
             .size(imageSize)
