@@ -12,4 +12,9 @@ sealed class HomeScreen(route: String, argumentKey: String) : Screens(route, arg
         route = "home_configuration",
         argumentKey = "home_configuration"
     )
+
+    object HomeConfigurationCam : HomeScreen(
+        route = "home_configuration_cam",
+        argumentKey = "home_configuration_cam"
+    )
 }

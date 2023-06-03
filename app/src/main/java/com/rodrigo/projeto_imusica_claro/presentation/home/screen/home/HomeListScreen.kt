@@ -41,6 +41,7 @@ fun HomeListScreen(
                     title = stringResource(id = R.string.home_screen_title),
                     hasNavigationIcon = false,
                     onConfigurationClicked = {
+                        inactivityViewModel.onUserInteraction()
                         HomeConfiguration.navigate(
                             navHostController = navHostController,
                         )

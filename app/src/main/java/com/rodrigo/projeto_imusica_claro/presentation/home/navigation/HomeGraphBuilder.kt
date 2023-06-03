@@ -14,6 +14,7 @@ import com.rodrigo.projeto_imusica_claro.presentation.base.theme.exitTransition
 import com.rodrigo.projeto_imusica_claro.presentation.base.theme.popEnterTransition
 import com.rodrigo.projeto_imusica_claro.presentation.base.view_model.InactivityViewModel
 import com.rodrigo.projeto_imusica_claro.presentation.home.navigation.HomeScreen
+import com.rodrigo.projeto_imusica_claro.presentation.home.screen.cam.HomeConfigurationCamScreen
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.configuration.HomeConfigurationScreen
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.configuration.HomeConfigurationViewModel
 import com.rodrigo.projeto_imusica_claro.presentation.home.screen.home.HomeListScreen
@@ -58,9 +59,10 @@ fun NavGraphBuilder.homeList(
 
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.homeConfiguration(
-    navHostController: NavHostController,
     onBackPressedDispatcher: OnBackPressedDispatcher,
-    activity: Activity
+    activity: Activity,
+    navHostController: NavHostController,
+    inactivityViewModel: InactivityViewModel
 ) {
     composable(
         route = HomeScreen.HomeConfiguration.route,
@@ -68,16 +70,33 @@ fun NavGraphBuilder.homeConfiguration(
         popEnterTransition = { popEnterTransition }
     ) {
         val viewModel = getViewModel<HomeConfigurationViewModel>()
-        val homeConfiguration: HomeScreen.HomeConfiguration? =
-            navHostController.previousBackStackEntry?.savedStateHandle?.get<HomeScreen.HomeConfiguration>(
-                HomeScreen.HomeConfiguration.argumentKey
-            )
         HomeConfigurationScreen(
             viewModel = viewModel,
-            navHostController = navHostController,
             backPressedDispatcher = onBackPressedDispatcher,
-            homeConfiguration = homeConfiguration,
-            activity = activity
+            activity = activity,
+            navController = navHostController,
+            inactivityViewModel = inactivityViewModel
+        )
+    }
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+fun NavGraphBuilder.homeConfigurationCam(
+    onBackPressedDispatcher: OnBackPressedDispatcher,
+    activity: Activity,
+    inactivityViewModel: InactivityViewModel,
+    navHostController: NavHostController,
+) {
+    composable(
+        route = HomeScreen.HomeConfigurationCam.route,
+        exitTransition = { exitTransition },
+        popEnterTransition = { popEnterTransition }
+    ) {
+        HomeConfigurationCamScreen(
+            backPressedDispatcher = onBackPressedDispatcher,
+            activity = activity,
+            inactivityViewModel = inactivityViewModel,
+            navController = navHostController
         )
     }
 }

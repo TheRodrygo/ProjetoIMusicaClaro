@@ -31,9 +31,16 @@ class HomeActivity : BaseActivity() {
                             inactivityViewModel = inactivityViewModel
                         )
                         homeConfiguration(
-                            navHostController = navController,
                             onBackPressedDispatcher = onBackPressedDispatcher,
-                            activity = this@HomeActivity
+                            activity = this@HomeActivity,
+                            navHostController = navController,
+                            inactivityViewModel = inactivityViewModel
+                        )
+                        homeConfigurationCam(
+                            onBackPressedDispatcher = onBackPressedDispatcher,
+                            activity = this@HomeActivity,
+                            inactivityViewModel = inactivityViewModel,
+                            navHostController = navController
                         )
                     }
                 )
